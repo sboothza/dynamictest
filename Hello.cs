@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace TestDynamic
 {
@@ -12,5 +9,16 @@ namespace TestDynamic
         {
             Console.WriteLine($"{value1} {value2}");
         }
+
+        public void Test2([NotNull] string value1, [GreaterThan(6)] int value2)
+        {
+            Console.WriteLine($"{value1} {value2}");
+        }
+
+        [StringLength(1)]
+        public string Id { get; set; }
+
+        [Range(minimum:4, maximum:18)]
+        public int ShoeSize { get; set; }
     }
 }
