@@ -55,8 +55,7 @@ namespace TestDynamic
             var compilation = CSharpCompilation.Create(Guid.NewGuid().ToString(),
                                                        new[] { syntaxTree },
                                                        GetStandardReferences(),
-                                                       new CSharpCompilationOptions(OutputKind
-                                                                                        .DynamicallyLinkedLibrary));
+                                                       new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
             using (var ms = new MemoryStream())
             {
